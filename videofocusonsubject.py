@@ -23,7 +23,7 @@ def detect_objects(frame, model):
     return results.xyxy[0].cpu().numpy()
 
 class SmoothCrop:
-    def __init__(self, window_size=30):
+    def __init__(self, window_size=50):
         self.crop_queue = deque(maxlen=window_size)
     
     def update(self, new_crop):
